@@ -1,5 +1,6 @@
 package com.chibana.taskapp.model
 
+import org.springframework.format.annotation.DateTimeFormat
 import java.time.LocalDate
 import javax.persistence.*
 
@@ -26,13 +27,16 @@ data class TaskEntity(
     var status: StatusEnum,
 
     @Column(name = "due_date")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     var dueDate: LocalDate,
 
     @Column(name = "created_date")
-    var createdDate: LocalDate,
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    var createdDate: LocalDate = LocalDate.now(),
 
     @Column(name = "updated_date")
-    var updatedDate: LocalDate
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    var updatedDate: LocalDate = LocalDate.now()
 
 
 )
