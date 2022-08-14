@@ -12,6 +12,9 @@ data class TaskEntity(
     @GeneratedValue(strategy = GenerationType.AUTO)
     var id: Long,
 
+    @Column(name = "username")
+    var username: String,
+
     @Column(name = "title")
     var title: String,
 
